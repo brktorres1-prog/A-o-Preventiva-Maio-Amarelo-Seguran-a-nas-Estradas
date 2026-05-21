@@ -121,6 +121,8 @@ Iniciar Treinamento
 
 <title>Painel de Segurança Viária</title>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
 body{
   margin:0;
@@ -128,14 +130,12 @@ body{
   background:#eef2f7;
 }
 
-/* CONTAINER */
 section{
   max-width:1100px;
   margin:auto;
   padding:40px 20px;
 }
 
-/* TÍTULO */
 h2{
   text-align:center;
   font-size:30px;
@@ -149,7 +149,7 @@ p{
   margin-bottom:25px;
 }
 
-/* GRID CARDS */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
@@ -175,13 +175,20 @@ p{
   color:#333;
 }
 
-/* GRÁFICO */
+/* GRAFICO BOX */
 .chart-box{
   background:#fff;
   margin-top:25px;
   padding:20px;
   border-radius:14px;
   box-shadow:0 4px 10px rgba(0,0,0,0.06);
+
+  display:flex;
+  flex-direction:column;
+}
+
+/* ALTURA DO GRAFICO */
+.chart-area{
   height:320px;
 }
 
@@ -194,20 +201,10 @@ p{
 }
 
 /* MOBILE */
-@media (max-width: 768px){
-
-  section{
-    padding:20px 12px;
-  }
-
-  h2{
-    font-size:22px;
-  }
-
-  .chart-box{
-    height:260px;
-    padding:15px;
-  }
+@media (max-width:768px){
+  section{ padding:20px 12px; }
+  h2{ font-size:22px; }
+  .chart-area{ height:260px; }
 }
 </style>
 
@@ -221,7 +218,7 @@ p{
 
   <p>Rodovias federais — análise de acidentes, vítimas e transporte de cargas</p>
 
-  <!-- CARDS 1 -->
+  <!-- CARDS -->
   <div class="grid">
 
     <div class="card">
@@ -253,40 +250,12 @@ p{
 
   </div>
 
-  <!-- CARDS 2 -->
-  <div class="grid" style="margin-top:15px;">
-
-    <div class="card">
-      <h3>🚛 Transporte de cargas</h3>
-      <p>Acidentes: +20%</p>
-      <p>Mortes: 44%</p>
-    </div>
-
-    <div class="card">
-      <h3>⚠️ Principal causa</h3>
-      <p>Falta de reação</p>
-      <p>30,7% dos casos</p>
-    </div>
-
-    <div class="card">
-      <h3>🚨 Comportamentos de risco</h3>
-      <p>Contramão: 15,9%</p>
-      <p>Ultrapassagem: 6,7%</p>
-    </div>
-
-    <div class="card">
-      <h3>🚓 Operação PRF</h3>
-      <p>1.172 mortes</p>
-      <p>514 com caminhões</p>
-      <p>288 colisões frontais</p>
-    </div>
-
-  </div>
-
   <!-- GRAFICO -->
   <div class="chart-box">
 
-    <canvas id="graficoComparativo"></canvas>
+    <div class="chart-area">
+      <canvas id="graficoComparativo"></canvas>
+    </div>
 
     <!-- FONTES -->
     <div class="sources">
@@ -308,6 +277,44 @@ p{
     </div>
 
   </div>
+
+</section>
+
+<script>
+const ctx = document.getElementById('graficoComparativo');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Acidentes totais', 'Mortes'],
+    datasets: [
+      {
+        label: '2024',
+        data: [73135, 6151],
+        backgroundColor: 'rgba(120,120,120,0.6)'
+      },
+      {
+        label: '2025',
+        data: [72476, 6040],
+        backgroundColor: 'rgba(255,193,7,0.7)'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' }
+    },
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
 
 </section>
 
