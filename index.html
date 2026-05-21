@@ -113,7 +113,86 @@ Iniciar Treinamento
 </a>
 
 </header>
+<section style="max-width:1000px; margin:auto; padding:40px 20px;">
 
+  <h2 style="text-align:center; font-size:32px;">
+    📊 Painel de Segurança Viária — Comparativo 2024 x 2025
+  </h2>
+
+  <p style="text-align:center; color:#555; margin-bottom:30px;">
+    Dados simulados para análise de tendência no transporte rodoviário de carga
+  </p>
+
+  <!-- CARDS COMPARATIVOS -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px;">
+
+    <div style="background:white; padding:20px; border-radius:15px;">
+      <h3>🚛 Acidentes com caminhões</h3>
+      <p><b>2024:</b> 14.200</p>
+      <p><b>2025:</b> 14.800</p>
+      <p style="color:#d9534f;">↑ +4,2%</p>
+    </div>
+
+    <div style="background:white; padding:20px; border-radius:15px;">
+      <h3>⚠ Acidentes graves</h3>
+      <p><b>2024:</b> 60.900</p>
+      <p><b>2025:</b> 62.400</p>
+      <p style="color:#d9534f;">↑ +2,4%</p>
+    </div>
+
+    <div style="background:white; padding:20px; border-radius:15px;">
+      <h3>💀 Vítimas fatais</h3>
+      <p><b>2024:</b> 5.480</p>
+      <p><b>2025:</b> 5.210</p>
+      <p style="color:#28a745;">↓ -4,9%</p>
+    </div>
+
+  </div>
+
+  <!-- GRÁFICO -->
+  <div style="background:white; margin-top:30px; padding:20px; border-radius:15px;">
+
+    <h3 style="text-align:center;">📈 Evolução Comparativa (2024 vs 2025)</h3>
+    <canvas id="graficoComparativo"></canvas>
+
+  </div>
+
+</section>
+
+<!-- CHART JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('graficoComparativo');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Acidentes caminhões', 'Acidentes graves', 'Vítimas fatais'],
+    datasets: [
+      {
+        label: '2024',
+        data: [14200, 60900, 5480],
+        backgroundColor: '#999999'
+      },
+      {
+        label: '2025',
+        data: [14800, 62400, 5210],
+        backgroundColor: '#f4c400'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' }
+    },
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+</script>
 <div style="max-width:900px; margin:auto;">
 
   <!-- PROGRESSO -->
