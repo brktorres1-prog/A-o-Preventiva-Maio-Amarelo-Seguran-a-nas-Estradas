@@ -22,7 +22,7 @@ body{
 }
 
 /* =========================
-   MENU FIXO
+   MENU FIXO (CORRIGIDO)
 ========================= */
 .menu{
   position:fixed;
@@ -34,16 +34,25 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
+  padding:12px 25px;
   z-index:999;
   font-size:14px;
+  box-sizing:border-box;
+  flex-wrap:wrap;
 }
 
 .menu a{
   color:#fff;
-  margin-left:15px;
+  margin-left:10px;
   text-decoration:none;
   font-size:13px;
+  padding:6px 10px;
+  border-radius:6px;
+  white-space:nowrap;
+}
+
+.menu a:hover{
+  background:rgba(255,255,255,0.1);
 }
 
 /* =========================
@@ -102,6 +111,7 @@ section{
   padding:60px 20px;
   max-width:1100px;
   margin:auto;
+  scroll-margin-top:100px; /* 🔥 evita corte ao clicar no menu */
 }
 
 .alt{
@@ -135,14 +145,16 @@ h2{
 .card{
   background:#fff;
   border-radius:16px;
-  padding:14px;
+  padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
   border:1px solid rgba(0,0,0,0.04);
-  transition:0.25s;
 }
 
-.card:hover{
-  transform:translateY(-4px);
+.card p{
+  font-size:12px;
+  color:#666;
+  margin-top:8px;
+  line-height:1.4;
 }
 
 /* =========================
@@ -153,6 +165,7 @@ h2{
   padding:20px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  padding-bottom:30px;
 }
 
 .chart-area{
@@ -160,14 +173,20 @@ h2{
 }
 
 /* =========================
-   VIDEOS (CARROSSEL)
+   VIDEOS
 ========================= */
+#videos{
+  scroll-margin-top:80px;
+}
+
 .carousel{
   display:flex;
   gap:15px;
   overflow-x:auto;
+  overflow-y:hidden;
   scroll-snap-type:x mandatory;
   padding-bottom:10px;
+  margin-top:10px;
 }
 
 .video{
@@ -175,7 +194,7 @@ h2{
   min-width:85%;
   flex:0 0 auto;
   scroll-snap-align:center;
-  padding-top:56.25%;
+  height:260px;
 }
 
 .video iframe{
@@ -209,20 +228,6 @@ iframe.form{
 }
 
 /* =========================
-   ANIMAÇÃO
-========================= */
-.hidden{
-  opacity:0;
-  transform:translateY(18px);
-  transition:all 0.7s ease;
-}
-
-.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* =========================
    MOBILE
 ========================= */
 @media(max-width:768px){
@@ -237,8 +242,8 @@ iframe.form{
   }
 
   .hero-logo{
-    text-align:center;
     margin-top:20px;
+    text-align:center;
   }
 
 }
@@ -264,15 +269,14 @@ iframe.form{
 
   <div class="hero-content">
 
-    <!-- TEXTO -->
     <div class="hero-text">
       <h1>Maio Amarelo 2026</h1>
       <p>Desacelere. Seu bem maior é a vida.</p>
 
-      <a href="#formulario" class="btn">Iniciar Treinamento</a>
+      <a href="#conceitos" class="btn">Iniciar Treinamento</a>
     </div>
 
-    <!-- FAROL DIREITA -->
+    <!-- FAROL -->
     <div class="hero-logo">
 
 <svg width="140" height="180" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
@@ -281,7 +285,6 @@ iframe.form{
 
   <circle cx="60" cy="55" r="10" fill="#444"/>
 
-  <!-- AMARELO ANIMADO -->
   <circle cx="60" cy="95" r="12" fill="#f4c400">
     <animate attributeName="opacity"
       values="1;0.3;1"
@@ -289,7 +292,6 @@ iframe.form{
       repeatCount="indefinite"/>
   </circle>
 
-  <!-- brilho -->
   <circle cx="60" cy="95" r="20" fill="#f4c400" opacity="0.15">
     <animate attributeName="opacity"
       values="0.15;0.05;0.15"
@@ -311,13 +313,23 @@ iframe.form{
 <section id="conceitos">
 
 <h2>Segurança nas Estradas</h2>
-<p class="subtitle">Fatores críticos de risco</p>
 
 <div class="grid">
 
-  <div class="card">🚗 Velocidade</div>
-  <div class="card">📱 Distração</div>
-  <div class="card">😴 Fadiga</div>
+  <div class="card">
+    🚗 <b>Velocidade</b>
+    <p>Excesso de velocidade reduz o tempo de reação e aumenta gravidade dos acidentes.</p>
+  </div>
+
+  <div class="card">
+    📱 <b>Distração</b>
+    <p>Uso do celular ao volante é uma das principais causas de colisões.</p>
+  </div>
+
+  <div class="card">
+    😴 <b>Fadiga</b>
+    <p>Cansaço reduz reflexos e aumenta risco de saídas de pista.</p>
+  </div>
 
 </div>
 
@@ -340,6 +352,23 @@ iframe.form{
 <div class="chart-box">
   <div class="chart-area">
     <canvas id="grafico"></canvas>
+  </div>
+
+  <!-- FONTES -->
+  <div style="font-size:10px; color:#777; margin-top:12px; line-height:1.4;">
+    <b>Fontes:</b><br><br>
+
+    1. CNT – Acidentes em rodovias federais geram custo de R$ 16,8 bilhões e desafios de comportamento e infraestrutura  
+    <br>
+    https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura
+
+    <br><br>
+
+    2. Pesquisa CNT de Acidentes Rodoviários 2025
+
+    <br><br>
+
+    3. PRF: quase 44% das mortes nas estradas envolvem veículos de carga | Agência Brasil
   </div>
 </div>
 
@@ -386,33 +415,26 @@ Created by Rodolpho Torres - Risk Management Professional © 2026
 
 <!-- CHART -->
 <script>
-const ctx = document.getElementById('grafico');
+window.addEventListener("load", () => {
+  const ctx = document.getElementById('grafico');
 
-new Chart(ctx, {
-  type:'bar',
-  data:{
-    labels:['Acidentes','Mortes'],
-    datasets:[
-      {label:'2024',data:[73135,6151],backgroundColor:'gray'},
-      {label:'2025',data:[72476,6040],backgroundColor:'#f4c400'}
-    ]
-  }
-});
-</script>
-
-<!-- ANIMAÇÃO -->
-<script>
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('show');
+  new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels:['Acidentes','Mortes'],
+      datasets:[
+        {label:'2024',data:[73135,6151],backgroundColor:'gray'},
+        {label:'2025',data:[72476,6040],backgroundColor:'#f4c400'}
+      ]
+    },
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{
+        legend:{position:'top'}
+      }
     }
   });
-});
-
-document.querySelectorAll('section,.card').forEach(el=>{
-  el.classList.add('hidden');
-  observer.observe(el);
 });
 </script>
 
