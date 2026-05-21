@@ -11,14 +11,6 @@
 <style>
 
 /* =========================
-   SCROLL GLOBAL (CORREÇÃO PRINCIPAL)
-========================= */
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:80px;
-}
-
-/* =========================
    BASE
 ========================= */
 body{
@@ -29,7 +21,15 @@ body{
 }
 
 /* =========================
-   MENU FIXO
+   SCROLL
+========================= */
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+/* =========================
+   MENU
 ========================= */
 .menu{
   position:fixed;
@@ -43,9 +43,8 @@ body{
   align-items:center;
   padding:12px 25px;
   z-index:999;
-  font-size:14px;
-  box-sizing:border-box;
   flex-wrap:wrap;
+  box-sizing:border-box;
 }
 
 .menu a{
@@ -55,7 +54,6 @@ body{
   font-size:13px;
   padding:6px 10px;
   border-radius:6px;
-  white-space:nowrap;
 }
 
 .menu a:hover{
@@ -67,7 +65,7 @@ body{
 ========================= */
 .hero{
   background:#f4c400;
-  padding:90px 20px;
+  padding:100px 20px 70px;
 }
 
 .hero-content{
@@ -79,11 +77,6 @@ body{
   flex-wrap:wrap;
 }
 
-.hero-text{
-  flex:1;
-  min-width:250px;
-}
-
 .hero h1{
   font-size:52px;
   margin:0;
@@ -91,48 +84,35 @@ body{
 
 .hero p{
   font-size:20px;
-  margin-top:10px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:25px;
-  padding:14px 28px;
+  margin-top:20px;
+  padding:12px 22px;
   background:#000;
   color:#f4c400;
   text-decoration:none;
   border-radius:10px;
-  font-weight:bold;
 }
 
 /* FAROL */
 .hero-logo svg{
   max-width:140px;
-  height:auto;
 }
 
 /* =========================
-   SEÇÕES (CORREÇÃO PRINCIPAL)
+   SEÇÕES
 ========================= */
 section{
   padding:60px 20px;
   max-width:1100px;
   margin:auto;
-
-  scroll-margin-top:80px; /* 🔥 impede corte no clique do menu */
+  scroll-margin-top:90px;
 }
 
 /* =========================
-   TITULOS
-========================= */
-h2{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-/* =========================
-   GRID
+   GRID / CARDS
 ========================= */
 .grid{
   display:grid;
@@ -140,9 +120,6 @@ h2{
   gap:15px;
 }
 
-/* =========================
-   CARDS
-========================= */
 .card{
   background:#fff;
   border-radius:16px;
@@ -151,9 +128,9 @@ h2{
 }
 
 .card p{
-  font-size:12px;
-  color:#666;
-  margin-top:8px;
+  font-size:22px;
+  font-weight:bold;
+  margin:10px 0;
 }
 
 /* =========================
@@ -169,6 +146,13 @@ h2{
 
 .chart-area{
   height:320px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.chart-area canvas{
+  max-width:100%;
 }
 
 /* =========================
@@ -178,25 +162,22 @@ h2{
   display:flex;
   gap:15px;
   overflow-x:auto;
-  overflow-y:hidden;
   scroll-snap-type:x mandatory;
-  padding-bottom:10px;
 }
 
 .video{
-  position:relative;
   min-width:85%;
-  flex:0 0 auto;
-  scroll-snap-align:center;
   height:260px;
+  position:relative;
+  scroll-snap-align:center;
 }
 
 .video iframe{
-  position:absolute;
   width:100%;
   height:100%;
   border:0;
   border-radius:16px;
+  position:absolute;
 }
 
 /* =========================
@@ -218,27 +199,6 @@ iframe.form{
   text-align:center;
   padding:30px 15px;
   font-size:12px;
-  margin-top:40px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media(max-width:768px){
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero-content{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-logo{
-    margin-top:20px;
-  }
-
 }
 
 </style>
@@ -252,6 +212,7 @@ iframe.form{
   <div>
     <a href="#conceitos">Conceitos</a>
     <a href="#dados">Dados</a>
+    <a href="#orientacao">Orientação</a>
     <a href="#videos">Vídeos</a>
     <a href="#formulario">Formulário</a>
   </div>
@@ -262,11 +223,10 @@ iframe.form{
 
   <div class="hero-content">
 
-    <div class="hero-text">
+    <div>
       <h1>Maio Amarelo 2026</h1>
       <p>Desacelere. Seu bem maior é a vida.</p>
-
-      <a href="#conceitos" class="btn">Iniciar Treinamento</a>
+      <a class="btn" href="#conceitos">Iniciar</a>
     </div>
 
     <!-- FAROL -->
@@ -282,33 +242,17 @@ iframe.form{
     </div>
 
   </div>
-
 </div>
 
 <!-- CONCEITOS -->
 <section id="conceitos">
-
 <h2>Segurança nas Estradas</h2>
 
 <div class="grid">
-
-  <div class="card">
-    🚗 <b>Velocidade</b>
-    <p>Excesso de velocidade reduz o tempo de reação e aumenta gravidade dos acidentes.</p>
-  </div>
-
-  <div class="card">
-    📱 <b>Distração</b>
-    <p>Uso do celular ao volante é uma das principais causas de colisões.</p>
-  </div>
-
-  <div class="card">
-    😴 <b>Fadiga</b>
-    <p>Cansaço reduz reflexos e aumenta risco de saídas de pista.</p>
-  </div>
-
+  <div class="card">🚗 <b>Velocidade</b><p>Excesso de velocidade reduz reação.</p></div>
+  <div class="card">📱 <b>Distração</b><p>Celular ao volante é risco grave.</p></div>
+  <div class="card">😴 <b>Fadiga</b><p>Cansaço aumenta acidentes.</p></div>
 </div>
-
 </section>
 
 <!-- DADOS -->
@@ -316,11 +260,48 @@ iframe.form{
 
 <h2>📊 Dados 2024 x 2025</h2>
 
-<div class="chart-box">
+<div class="grid">
+  <div class="card"><b>Acidentes</b><p>72.476</p></div>
+  <div class="card"><b>Feridos</b><p>83.490</p></div>
+  <div class="card"><b>Mortes</b><p>6.040</p></div>
+  <div class="card"><b>Custo</b><p>R$ 16 bi</p></div>
+</div>
 
+<div class="chart-box">
   <div class="chart-area">
     <canvas id="grafico"></canvas>
   </div>
+
+  <div style="margin-top:10px; font-size:11px; color:#666; font-style:italic;">
+    <b>Fontes:</b><br>
+    CNT – custos e acidentes rodoviários<br>
+    Pesquisa CNT de Acidentes Rodoviários 2025<br>
+    PRF / Agência Brasil – veículos de carga
+  </div>
+</div>
+
+</section>
+
+<!-- ORIENTAÇÃO -->
+<section id="orientacao">
+
+<h2>🛣️ Orientação — Segurança nas Estradas</h2>
+
+<div class="card" style="text-align:justify; font-size:14px; line-height:1.6;">
+
+Em 2025, os dados de acidentes em rodovias federais reforçam a necessidade de atenção contínua e mudança de comportamento dos condutores.
+
+A maioria dos sinistros está relacionada ao fator humano, incluindo distração, excesso de velocidade e fadiga.
+
+A direção defensiva é essencial para reduzir riscos e salvar vidas, baseada em atenção, respeito às leis e antecipação de perigos.
+
+Em operações com veículos de carga, o impacto dos acidentes é ainda mais grave, exigindo maior responsabilidade dos condutores.
+
+<br><br>
+
+<b style="font-size:15px; color:#111;">
+Assista aos vídeos. Sua vida é importante. Uma decisão errada pode não ter segunda chance.
+</b>
 
 </div>
 
@@ -351,8 +332,7 @@ iframe.form{
 <h2>📋 Formulário</h2>
 
 <iframe class="form"
-src="https://forms.office.com/r/insnuxmpRK?embed=true">
-</iframe>
+src="https://forms.office.com/r/insnuxmpRK?embed=true"></iframe>
 
 </section>
 
@@ -370,8 +350,8 @@ window.addEventListener("load", () => {
     data:{
       labels:['Acidentes','Mortes'],
       datasets:[
-        {label:'2024',data:[73135,6151],backgroundColor:'gray'},
-        {label:'2025',data:[72476,6040],backgroundColor:'#f4c400'}
+        {label:'2024',data:[73135,6151]},
+        {label:'2025',data:[72476,6040]}
       ]
     }
   });
