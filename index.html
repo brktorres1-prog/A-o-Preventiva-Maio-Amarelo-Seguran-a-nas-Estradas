@@ -11,6 +11,14 @@
 <style>
 
 /* =========================
+   SCROLL GLOBAL (CORREÇÃO PRINCIPAL)
+========================= */
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+/* =========================
    BASE
 ========================= */
 body{
@@ -18,11 +26,10 @@ body{
   font-family:Arial, sans-serif;
   color:#1f2d3d;
   background:linear-gradient(to bottom,#ffffff,#f7f9fc,#eef2f7);
-  padding-top:60px;
 }
 
 /* =========================
-   MENU FIXO (CORRIGIDO)
+   MENU FIXO
 ========================= */
 .menu{
   position:fixed;
@@ -105,17 +112,14 @@ body{
 }
 
 /* =========================
-   SEÇÕES
+   SEÇÕES (CORREÇÃO PRINCIPAL)
 ========================= */
 section{
   padding:60px 20px;
   max-width:1100px;
   margin:auto;
-  scroll-margin-top:100px; /* 🔥 evita corte ao clicar no menu */
-}
 
-.alt{
-  background:#f7f9fc;
+  scroll-margin-top:80px; /* 🔥 impede corte no clique do menu */
 }
 
 /* =========================
@@ -127,14 +131,8 @@ h2{
   margin-bottom:10px;
 }
 
-.subtitle{
-  text-align:center;
-  color:#6b7c93;
-  margin-bottom:30px;
-}
-
 /* =========================
-   CARDS
+   GRID
 ========================= */
 .grid{
   display:grid;
@@ -142,19 +140,20 @@ h2{
   gap:15px;
 }
 
+/* =========================
+   CARDS
+========================= */
 .card{
   background:#fff;
   border-radius:16px;
   padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
-  border:1px solid rgba(0,0,0,0.04);
 }
 
 .card p{
   font-size:12px;
   color:#666;
   margin-top:8px;
-  line-height:1.4;
 }
 
 /* =========================
@@ -165,7 +164,7 @@ h2{
   padding:20px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
-  padding-bottom:30px;
+  margin-top:20px;
 }
 
 .chart-area{
@@ -175,10 +174,6 @@ h2{
 /* =========================
    VIDEOS
 ========================= */
-#videos{
-  scroll-margin-top:80px;
-}
-
 .carousel{
   display:flex;
   gap:15px;
@@ -186,7 +181,6 @@ h2{
   overflow-y:hidden;
   scroll-snap-type:x mandatory;
   padding-bottom:10px;
-  margin-top:10px;
 }
 
 .video{
@@ -243,7 +237,6 @@ iframe.form{
 
   .hero-logo{
     margin-top:20px;
-    text-align:center;
   }
 
 }
@@ -278,31 +271,14 @@ iframe.form{
 
     <!-- FAROL -->
     <div class="hero-logo">
-
-<svg width="140" height="180" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
-
+<svg width="140" height="180" viewBox="0 0 120 160">
   <rect x="30" y="5" width="60" height="150" rx="12" fill="#1f2d3d"/>
-
   <circle cx="60" cy="55" r="10" fill="#444"/>
-
   <circle cx="60" cy="95" r="12" fill="#f4c400">
-    <animate attributeName="opacity"
-      values="1;0.3;1"
-      dur="1.2s"
-      repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
   </circle>
-
-  <circle cx="60" cy="95" r="20" fill="#f4c400" opacity="0.15">
-    <animate attributeName="opacity"
-      values="0.15;0.05;0.15"
-      dur="1.2s"
-      repeatCount="indefinite"/>
-  </circle>
-
   <circle cx="60" cy="135" r="10" fill="#444"/>
-
 </svg>
-
     </div>
 
   </div>
@@ -336,40 +312,16 @@ iframe.form{
 </section>
 
 <!-- DADOS -->
-<section id="dados" class="alt">
+<section id="dados">
 
 <h2>📊 Dados 2024 x 2025</h2>
 
-<div class="grid">
-
-  <div class="card"><b>Acidentes:</b> 73.135 → 72.476</div>
-  <div class="card"><b>Mortes:</b> 6.151 → 6.040</div>
-  <div class="card"><b>Feridos:</b> 83.490</div>
-  <div class="card"><b>Custo:</b> R$ 16 bi</div>
-
-</div>
-
 <div class="chart-box">
+
   <div class="chart-area">
     <canvas id="grafico"></canvas>
   </div>
 
-  <!-- FONTES -->
-  <div style="font-size:10px; color:#777; margin-top:12px; line-height:1.4;">
-    <b>Fontes:</b><br><br>
-
-    1. CNT – Acidentes em rodovias federais geram custo de R$ 16,8 bilhões e desafios de comportamento e infraestrutura  
-    <br>
-    https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura
-
-    <br><br>
-
-    2. Pesquisa CNT de Acidentes Rodoviários 2025
-
-    <br><br>
-
-    3. PRF: quase 44% das mortes nas estradas envolvem veículos de carga | Agência Brasil
-  </div>
 </div>
 
 </section>
@@ -389,10 +341,6 @@ iframe.form{
     <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
   </div>
 
-  <div class="video">
-    <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
-  </div>
-
 </div>
 
 </section>
@@ -400,7 +348,7 @@ iframe.form{
 <!-- FORM -->
 <section id="formulario">
 
-<h2>📋 Registro de Participação</h2>
+<h2>📋 Formulário</h2>
 
 <iframe class="form"
 src="https://forms.office.com/r/insnuxmpRK?embed=true">
@@ -413,7 +361,6 @@ src="https://forms.office.com/r/insnuxmpRK?embed=true">
 Created by Rodolpho Torres - Risk Management Professional © 2026
 </footer>
 
-<!-- CHART -->
 <script>
 window.addEventListener("load", () => {
   const ctx = document.getElementById('grafico');
@@ -426,13 +373,6 @@ window.addEventListener("load", () => {
         {label:'2024',data:[73135,6151],backgroundColor:'gray'},
         {label:'2025',data:[72476,6040],backgroundColor:'#f4c400'}
       ]
-    },
-    options:{
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{
-        legend:{position:'top'}
-      }
     }
   });
 });
