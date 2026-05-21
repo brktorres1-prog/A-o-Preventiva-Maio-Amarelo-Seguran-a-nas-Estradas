@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maio Amarelo 2026</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff8d6;
+    color:#222;
+}
+
+header{
+    background:#f4c400;
+    padding:60px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+header p{
+    font-size:24px;
+}
+
+.botao{
+    display:inline-block;
+    margin-top:30px;
+    background:#000;
+    color:#f4c400;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+section{
+    padding:50px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quiz{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    margin-top:30px;
+}
+
+form{
+    display:grid;
+    gap:20px;
+}
+
+input, textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    width:100%;
+}
+
+button{
+    background:#f4c400;
+    border:none;
+    padding:15px;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+footer{
+    background:#000;
+    color:#f4c400;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Maio Amarelo 2026</h1>
+
+<p>Desacelere. Seu bem maior é a vida.</p>
+
+<a href="#formulario" class="botao">
+Iniciar Treinamento
+</a>
+
+</header>
+
+<section>
+
+<h2>Segurança nas Estradas</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Excesso de Velocidade</h3>
+<p>
+Respeitar os limites de velocidade reduz riscos de acidentes.
+</p>
+</div>
+
+<div class="card">
+<h3>Celular ao Volante</h3>
+<p>
+Evite distrações e mantenha atenção total durante a condução.
+</p>
+</div>
+
+<div class="card">
+<h3>Fadiga</h3>
+<p>
+O descanso adequado ajuda a prevenir acidentes nas estradas.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Quiz de Conscientização</h2>
+
+<div class="quiz">
+
+<p><strong>1. Utilizar celular dirigindo aumenta o risco de acidentes?</strong></p>
+
+<input type="radio" name="q1"> Sim<br><br>
+<input type="radio" name="q1"> Não
+
+<br><br>
+
+<p><strong>2. O descanso do motorista é importante?</strong></p>
+
+<input type="radio" name="q2"> Sim<br><br>
+<input type="radio" name="q2"> Não
+
+</div>
+
+</section>
+
+<section id="formulario">
+
+<h2>Registro de Participação</h2>
+
+<form>
+
+<input type="text" placeholder="Nome Completo">
+
+<input type="text" placeholder="CPF">
+
+<input type="text" placeholder="Transportadora">
+
+<input type="text" placeholder="Placa do Veículo">
+
+<textarea placeholder="Observações"></textarea>
+
+<button type="submit">
+Confirmar Participação
+</button>
+
+</form>
+
+</section>
+
+<footer>
+Criado por Gerente de Contas BRK / Rodolpho Torres / 2026
+</footer>
+
+</body>
+</html>
