@@ -10,9 +10,7 @@
 
 <style>
 
-/* =========================
-   BASE
-========================= */
+/* BASE */
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -20,17 +18,12 @@ body{
   background:linear-gradient(to bottom,#ffffff,#f7f9fc,#eef2f7);
 }
 
-/* =========================
-   SCROLL
-========================= */
 html{
   scroll-behavior:smooth;
   scroll-padding-top:90px;
 }
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 .menu{
   position:fixed;
   top:0;
@@ -60,12 +53,10 @@ html{
   background:rgba(255,255,255,0.1);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero{
   background:#f4c400;
-  padding:100px 20px 70px;
+  padding:110px 20px 70px;
 }
 
 .hero-content{
@@ -75,6 +66,7 @@ html{
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
+  gap:20px;
 }
 
 .hero h1{
@@ -101,9 +93,7 @@ html{
   max-width:140px;
 }
 
-/* =========================
-   SEÇÕES
-========================= */
+/* SEÇÕES */
 section{
   padding:60px 20px;
   max-width:1100px;
@@ -111,9 +101,7 @@ section{
   scroll-margin-top:90px;
 }
 
-/* =========================
-   GRID / CARDS
-========================= */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -133,9 +121,7 @@ section{
   margin:10px 0;
 }
 
-/* =========================
-   GRAFICO
-========================= */
+/* GRAFICO */
 .chart-box{
   background:#fff;
   padding:20px;
@@ -151,13 +137,7 @@ section{
   align-items:center;
 }
 
-.chart-area canvas{
-  max-width:100%;
-}
-
-/* =========================
-   VIDEOS
-========================= */
+/* VIDEOS */
 .carousel{
   display:flex;
   gap:15px;
@@ -180,9 +160,7 @@ section{
   position:absolute;
 }
 
-/* =========================
-   FORM
-========================= */
+/* FORM */
 iframe.form{
   width:100%;
   height:650px;
@@ -190,15 +168,23 @@ iframe.form{
   border-radius:16px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 .footer-dark{
   background:#111;
   color:#f4c400;
   text-align:center;
   padding:30px 15px;
   font-size:12px;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  .hero h1{font-size:34px;}
+  .hero p{font-size:16px;}
+  .hero-content{text-align:center; flex-direction:column;}
+  .grid{grid-template-columns:1fr;}
+  .video{min-width:95%; height:220px;}
+  iframe.form{height:520px;}
 }
 
 </style>
@@ -246,19 +232,30 @@ iframe.form{
 
 <!-- CONCEITOS -->
 <section id="conceitos">
+
 <h2>Segurança nas Estradas</h2>
 
+<p style="text-align:center; max-width:800px; margin:auto; color:#555;">
+O trânsito brasileiro exige atenção constante. Pequenas atitudes ao volante podem definir grandes consequências. 
+A segurança viária depende diretamente do comportamento humano e da responsabilidade de cada condutor.
+</p>
+
 <div class="grid">
-  <div class="card">🚗 <b>Velocidade</b><p>Excesso de velocidade reduz reação.</p></div>
-  <div class="card">📱 <b>Distração</b><p>Celular ao volante é risco grave.</p></div>
-  <div class="card">😴 <b>Fadiga</b><p>Cansaço aumenta acidentes.</p></div>
+  <div class="card">🚗 <b>Velocidade</b><p>Excesso de velocidade reduz o tempo de reação e aumenta a gravidade dos acidentes.</p></div>
+  <div class="card">📱 <b>Distração</b><p>O uso do celular ao volante continua sendo uma das principais causas de colisões.</p></div>
+  <div class="card">😴 <b>Fadiga</b><p>Cansaço e sono comprometem a atenção e elevam o risco de acidentes graves.</p></div>
 </div>
+
 </section>
 
 <!-- DADOS -->
 <section id="dados">
 
 <h2>📊 Dados 2024 x 2025</h2>
+
+<p style="text-align:center; max-width:850px; margin:auto; color:#555;">
+Em 2025, houve leve redução nos indicadores de acidentes em rodovias federais, mas os números ainda são elevados e preocupantes, exigindo ações contínuas de prevenção.
+</p>
 
 <div class="grid">
   <div class="card"><b>Acidentes</b><p>72.476</p></div>
@@ -289,13 +286,13 @@ iframe.form{
 
 <div class="card" style="text-align:justify; font-size:14px; line-height:1.6;">
 
-Em 2025, os dados de acidentes em rodovias federais reforçam a necessidade de atenção contínua e mudança de comportamento dos condutores.
+A segurança no trânsito depende diretamente da consciência individual de cada motorista. 
+A maioria dos acidentes poderia ser evitada com atitudes simples como respeitar limites de velocidade, evitar distrações e dirigir com atenção total.
 
-A maioria dos sinistros está relacionada ao fator humano, incluindo distração, excesso de velocidade e fadiga.
+A direção defensiva é a principal ferramenta para redução de acidentes e preservação de vidas. 
+Ela exige atenção constante, respeito às normas e capacidade de antecipar riscos.
 
-A direção defensiva é essencial para reduzir riscos e salvar vidas, baseada em atenção, respeito às leis e antecipação de perigos.
-
-Em operações com veículos de carga, o impacto dos acidentes é ainda mais grave, exigindo maior responsabilidade dos condutores.
+Em veículos de carga, o impacto dos acidentes é ainda mais severo, reforçando a necessidade de responsabilidade redobrada.
 
 <br><br>
 
