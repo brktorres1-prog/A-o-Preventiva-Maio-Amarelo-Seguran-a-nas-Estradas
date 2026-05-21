@@ -6,6 +6,8 @@
 
 <title>Maio Amarelo 2026</title>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
 
 body{
@@ -15,38 +17,42 @@ body{
     color:#222;
 }
 
+/* HEADER */
 header{
     background:#f4c400;
-    padding:60px 20px;
+    padding:60px 20px 30px;
     text-align:center;
 }
 
 header h1{
-    font-size:50px;
-    margin-bottom:20px;
+    font-size:46px;
+    margin-bottom:10px;
 }
 
 header p{
-    font-size:24px;
+    font-size:20px;
 }
 
+/* BOTAO */
 .botao{
     display:inline-block;
-    margin-top:30px;
+    margin-top:20px;
     background:#000;
     color:#f4c400;
-    padding:15px 30px;
+    padding:14px 26px;
     text-decoration:none;
     border-radius:10px;
     font-weight:bold;
 }
 
+/* SEÇÕES */
 section{
     padding:50px 20px;
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
 }
 
+/* CARDS */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -55,353 +61,244 @@ section{
 
 .card{
     background:white;
-    padding:25px;
+    padding:20px;
     border-radius:15px;
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-.quiz{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    margin-top:30px;
-}
-
-form{
-    display:grid;
-    gap:20px;
-}
-
-input, textarea{
-    padding:15px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    width:100%;
-}
-
-button{
-    background:#f4c400;
-    border:none;
-    padding:15px;
-    font-size:18px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-footer{
-    background:#000;
-    color:#f4c400;
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<h1>Maio Amarelo 2026</h1>
-
-<p>Desacelere. Seu bem maior é a vida.</p>
-
-<a href="#formulario" class="botao">
-Iniciar Treinamento
-</a>
-
-</header>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Painel de Segurança Viária</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#eef2f7;
-}
-
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-h2{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:8px;
-  color:#1f2d3d;
-}
-
-p{
-  text-align:center;
-  color:#6b7c93;
-  margin-bottom:25px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-  gap:15px;
-}
-
-/* CARD */
-.card{
-  background:#fff;
-  padding:16px;
-  border-radius:14px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.06);
-}
-
-.card h3{
-  margin:0 0 10px 0;
-  font-size:16px;
-}
-
-.card p{
-  margin:6px 0;
-  text-align:left;
-  color:#333;
-}
-
-/* GRAFICO BOX */
+/* GRAFICO */
 .chart-box{
-  background:#fff;
-  margin-top:25px;
-  padding:20px;
-  border-radius:14px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.06);
-
-  display:flex;
-  flex-direction:column;
+    background:#fff;
+    margin-top:30px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
 }
 
-/* ALTURA DO GRAFICO */
 .chart-area{
-  height:320px;
+    height:320px;
 }
 
 /* FONTES */
 .sources{
-  font-size:10px;
-  color:#7a8a9a;
-  margin-top:12px;
-  line-height:1.4;
+    font-size:10px;
+    color:#7a8a9a;
+    margin-top:12px;
+    line-height:1.4;
+}
+
+/* VÍDEOS */
+.video{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    margin-bottom:30px;
+}
+
+.video iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+    border-radius:15px;
+}
+
+/* PROGRESSO */
+.progress-container{
+    position:sticky;
+    top:0;
+    background:#fff8d6;
+    padding:10px 0;
+    z-index:10;
+}
+
+.progress-bar-bg{
+    height:8px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+    max-width:900px;
+    margin:auto;
+}
+
+#progressBar{
+    height:8px;
+    width:0%;
+    background:#f4c400;
 }
 
 /* MOBILE */
 @media (max-width:768px){
-  section{ padding:20px 12px; }
-  h2{ font-size:22px; }
-  .chart-area{ height:260px; }
+    header h1{ font-size:30px; }
+    .chart-area{ height:260px; }
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header>
+    <h1>Maio Amarelo 2026</h1>
+    <p>Desacelere. Seu bem maior é a vida.</p>
+</header>
+
+<!-- BOTÃO (AGORA NO LUGAR CERTO) -->
+<section style="text-align:center; padding-top:20px;">
+    <a href="#formulario" class="botao">Iniciar Treinamento</a>
+</section>
+
+<!-- PAINEL -->
 <section>
 
-  <h2>📊 Painel de Segurança Viária — Brasil (2024 x 2025)</h2>
+<h2 style="text-align:center;">📊 Painel de Segurança Viária — Brasil (2024 x 2025)</h2>
+<p style="text-align:center;color:#666;">
+Rodovias federais — análise de acidentes, vítimas e transporte de cargas
+</p>
 
-  <p>Rodovias federais — análise de acidentes, vítimas e transporte de cargas</p>
-
-  <!-- CARDS -->
-  <div class="grid">
-
-    <div class="card">
-      <h3>🚧 Acidentes totais</h3>
-      <p><b>2024:</b> 73.135</p>
-      <p><b>2025:</b> 72.476</p>
-      <p style="color:#28a745;font-weight:bold;">↓ -0,9%</p>
-    </div>
+<div class="cards">
 
     <div class="card">
-      <h3>💀 Mortes</h3>
-      <p><b>2024:</b> 6.151</p>
-      <p><b>2025:</b> 6.040</p>
-      <p style="color:#28a745;font-weight:bold;">↓ -1,8%</p>
+        <h3>🚧 Acidentes totais</h3>
+        <p>2024: 73.135</p>
+        <p>2025: 72.476</p>
     </div>
 
     <div class="card">
-      <h3>🧍 Feridos</h3>
-      <p><b>2025:</b> 83.490</p>
-      <p style="color:#d9534f;font-weight:bold;">Indicador elevado</p>
+        <h3>💀 Mortes</h3>
+        <p>2024: 6.151</p>
+        <p>2025: 6.040</p>
     </div>
 
     <div class="card">
-      <h3>💰 Custo social</h3>
-      <p>Total: R$ 16 bilhões</p>
-      <p>Feridos: R$ 9,98 bi</p>
-      <p>Mortes: R$ 6,36 bi</p>
+        <h3>🧍 Feridos</h3>
+        <p>2025: 83.490</p>
     </div>
 
-  </div>
-
-  <!-- GRAFICO -->
-  <div class="chart-box">
-
-    <div class="chart-area">
-      <canvas id="graficoComparativo"></canvas>
+    <div class="card">
+        <h3>💰 Custo social</h3>
+        <p>R$ 16 bilhões</p>
     </div>
-
-    <!-- FONTES -->
-    <div class="sources">
-
-      <b>Fontes:</b><br>
-
-      2. CNT – Acidentes em rodovias federais geram custo de R$ 16,8 bilhões e expõem desafios de comportamento e infraestrutura  
-      <br>
-      https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura
-
-      <br><br>
-
-      3. Pesquisa CNT de Acidentes Rodoviários 2025
-
-      <br><br>
-
-      4. PRF – Quase 44% das mortes nas estradas envolvem veículos de carga | Agência Brasil
-
-    </div>
-
-  </div>
-
-</section>
-
-<script>
-const ctx = document.getElementById('graficoComparativo');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Acidentes totais', 'Mortes'],
-    datasets: [
-      {
-        label: '2024',
-        data: [73135, 6151],
-        backgroundColor: 'rgba(120,120,120,0.6)'
-      },
-      {
-        label: '2025',
-        data: [72476, 6040],
-        backgroundColor: 'rgba(255,193,7,0.7)'
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'top' }
-    },
-    scales: {
-      y: { beginAtZero: true }
-    }
-  }
-});
-</script>
-
-</body>
-</html>
-
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-const ctx = document.getElementById('graficoComparativo');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Acidentes totais', 'Mortes'],
-    datasets: [
-      {
-        label: '2024',
-        data: [73135, 6151],
-        backgroundColor: 'rgba(120,120,120,0.6)'
-      },
-      {
-        label: '2025',
-        data: [72476, 6040],
-        backgroundColor: 'rgba(255,193,7,0.7)'
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'top' }
-    },
-    scales: {
-      y: { beginAtZero: true }
-    }
-  }
-});
-</script>
-
-</body>
-</html>
-
-</script>
-
-</body>
-</html>
-<div style="max-width:900px; margin:auto;">
-
-  <!-- PROGRESSO -->
-  <div style="position:sticky; top:0; background:#fff8d6; padding:10px 0; z-index:10;">
-    <div style="height:8px; background:#ddd; border-radius:10px; overflow:hidden;">
-      <div id="progressBar" style="height:8px; width:0%; background:#f4c400;"></div>
-    </div>
-    <p style="text-align:center; margin:5px 0 0; font-weight:bold;">
-      Progresso do Treinamento
-    </p>
-  </div>
-
-  <!-- VÍDEO 1 -->
-  <h3 style="margin-top:30px;">📹 Vídeo 1 de 3</h3>
-  <div style="position:relative; width:100%; padding-top:56.25%;">
-    <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
-      allow="autoplay">
-    </iframe>
-  </div>
-
-  <!-- VÍDEO 2 -->
-  <h3 style="margin-top:40px;">📹 Vídeo 2 de 3</h3>
-  <div style="position:relative; width:100%; padding-top:56.25%;">
-    <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
-      allow="autoplay">
-    </iframe>
-  </div>
-
-  <!-- VÍDEO 3 -->
-  <h3 style="margin-top:40px;">📹 Vídeo 3 de 3</h3>
-  <div style="position:relative; width:100%; padding-top:56.25%;">
-    <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
-      allow="autoplay">
-    </iframe>
-  </div>
 
 </div>
 
-<!-- SCRIPT DA BARRA DE PROGRESSO -->
+<!-- GRAFICO -->
+<div class="chart-box">
+
+    <div class="chart-area">
+        <canvas id="graficoComparativo"></canvas>
+    </div>
+
+    <div class="sources">
+        <b>Fontes:</b><br>
+        2. CNT – Acidentes em rodovias federais...<br>
+        https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura<br><br>
+
+        3. Pesquisa CNT de Acidentes Rodoviários 2025<br><br>
+
+        4. PRF – Quase 44% das mortes nas estradas envolvem veículos de carga
+    </div>
+
+</div>
+
+</section>
+
+<!-- VÍDEOS + PROGRESSO -->
+<section>
+
+<div class="progress-container">
+    <div class="progress-bar-bg">
+        <div id="progressBar"></div>
+    </div>
+</div>
+
+<h2>📹 Treinamento</h2>
+
+<div class="video">
+<iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"></iframe>
+</div>
+
+<div class="video">
+<iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
+</div>
+
+<div class="video">
+<iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
+</div>
+
+</section>
+
+<!-- SEGURANÇA -->
+<section>
+
+<h2>🚦 Segurança nas Estradas</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Velocidade</h3>
+<p>Respeite os limites.</p>
+</div>
+
+<div class="card">
+<h3>Celular</h3>
+<p>Evite distrações ao volante.</p>
+</div>
+
+<div class="card">
+<h3>Fadiga</h3>
+<p>Descanso salva vidas.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FORM -->
+<section id="formulario">
+
+<h2>📋 Registro de Participação</h2>
+
+<iframe 
+width="100%" 
+height="650px" 
+src="https://forms.office.com/r/insnuxmpRK?embed=true"
+style="border:none;border-radius:15px;">
+</iframe>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#000;color:#f4c400;text-align:center;padding:30px;">
+Gerente de Contas BRK / Rodolpho Torres / 2026
+</footer>
+
+<!-- SCRIPT GRAFICO -->
+<script>
+const ctx = document.getElementById('graficoComparativo');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Acidentes', 'Mortes'],
+    datasets: [
+      { label: '2024', data: [73135, 6151], backgroundColor:'gray' },
+      { label: '2025', data: [72476, 6040], backgroundColor:'#f4c400' }
+    ]
+  },
+  options: {
+    responsive:true,
+    maintainAspectRatio:false
+  }
+});
+</script>
+
+<!-- PROGRESS BAR -->
 <script>
 window.addEventListener("scroll", function () {
   const scrollTop = window.scrollY;
@@ -410,68 +307,6 @@ window.addEventListener("scroll", function () {
   document.getElementById("progressBar").style.width = progress + "%";
 });
 </script>
-
-</div>
-
-</div>
-
-</section>
-    
-<section>
-
-<h2>Segurança nas Estradas</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Excesso de Velocidade</h3>
-<p>
-Respeitar os limites de velocidade reduz riscos de acidentes.
-</p>
-</div>
-
-<div class="card">
-<h3>Celular ao Volante</h3>
-<p>
-Evite distrações e mantenha atenção total durante a condução.
-</p>
-</div>
-
-<div class="card">
-<h3>Fadiga</h3>
-<p>
-O descanso adequado ajuda a prevenir acidentes nas estradas.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="formulario">
-
-<h2>Registro de Participação</h2>
-
-<iframe 
-width="100%" 
-height="700px" 
-src="https://forms.office.com/r/insnuxmpRK?embed=true" 
-frameborder="0" 
-marginwidth="0" 
-marginheight="0" 
-style="border: none; border-radius:15px; background:white;"
-allowfullscreen 
-webkitallowfullscreen 
-mozallowfullscreen 
-msallowfullscreen>
-
-</iframe>
-
-</section>
-
-<footer>
-Gerente de Contas BRK / Rodolpho Torres / 2026
-</footer>
 
 </body>
 </html>
