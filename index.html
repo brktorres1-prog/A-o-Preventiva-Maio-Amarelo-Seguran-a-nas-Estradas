@@ -149,13 +149,14 @@ p{
   margin-bottom:25px;
 }
 
-/* CARDS */
+/* GRID CARDS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
   gap:15px;
 }
 
+/* CARD */
 .card{
   background:#fff;
   padding:16px;
@@ -182,6 +183,14 @@ p{
   border-radius:14px;
   box-shadow:0 4px 10px rgba(0,0,0,0.06);
   height:320px;
+}
+
+/* FONTES */
+.sources{
+  font-size:10px;
+  color:#7a8a9a;
+  margin-top:12px;
+  line-height:1.4;
 }
 
 /* MOBILE */
@@ -276,7 +285,28 @@ p{
 
   <!-- GRAFICO -->
   <div class="chart-box">
+
     <canvas id="graficoComparativo"></canvas>
+
+    <!-- FONTES -->
+    <div class="sources">
+
+      <b>Fontes:</b><br>
+
+      2. CNT – Acidentes em rodovias federais geram custo de R$ 16,8 bilhões e expõem desafios de comportamento e infraestrutura  
+      <br>
+      https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura
+
+      <br><br>
+
+      3. Pesquisa CNT de Acidentes Rodoviários 2025
+
+      <br><br>
+
+      4. PRF – Quase 44% das mortes nas estradas envolvem veículos de carga | Agência Brasil
+
+    </div>
+
   </div>
 
 </section>
@@ -314,6 +344,11 @@ new Chart(ctx, {
     }
   }
 });
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
