@@ -114,34 +114,56 @@ Iniciar Treinamento
 
 </header>
 
-<section>
+<div style="max-width:900px; margin:auto;">
 
-<h2 style="text-align:center; font-size:36px;">
-⚠ Prevenção de Acidentes nas Estradas
-</h2>
+  <!-- PROGRESSO -->
+  <div style="position:sticky; top:0; background:#fff8d6; padding:10px 0; z-index:10;">
+    <div style="height:8px; background:#ddd; border-radius:10px; overflow:hidden;">
+      <div id="progressBar" style="height:8px; width:0%; background:#f4c400;"></div>
+    </div>
+    <p style="text-align:center; margin:5px 0 0; font-weight:bold;">
+      Progresso do Treinamento
+    </p>
+  </div>
 
-<p style="text-align:center; font-size:20px; margin-bottom:30px;">
-Dirigir com responsabilidade protege vidas e reduz riscos operacionais.
-</p>
+  <!-- VÍDEO 1 -->
+  <h3 style="margin-top:30px;">📹 Vídeo 1 de 3</h3>
+  <div style="position:relative; width:100%; padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
+      allow="autoplay">
+    </iframe>
+  </div>
 
-<div style="max-width:1000px; margin:auto;">
+  <!-- VÍDEO 2 -->
+  <h3 style="margin-top:40px;">📹 Vídeo 2 de 3</h3>
+  <div style="position:relative; width:100%; padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
+      allow="autoplay">
+    </iframe>
+  </div>
 
-<div style="max-width:900px; margin:auto; display:flex; flex-direction:column; gap:25px;">
+  <!-- VÍDEO 3 -->
+  <h3 style="margin-top:40px;">📹 Vídeo 3 de 3</h3>
+  <div style="position:relative; width:100%; padding-top:56.25%;">
+    <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:none; border-radius:15px;"
+      allow="autoplay">
+    </iframe>
+  </div>
 
-  <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"
-    width="100%" height="450" allow="autoplay"
-    style="border:none; border-radius:15px;">
-  </iframe>
+</div>
 
-  <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"
-    width="100%" height="450" allow="autoplay"
-    style="border:none; border-radius:15px;">
-  </iframe>
-
-  <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"
-    width="100%" height="450" allow="autoplay"
-    style="border:none; border-radius:15px;">
-  </iframe>
+<!-- SCRIPT DA BARRA DE PROGRESSO -->
+<script>
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+});
+</script>
 
 </div>
 
