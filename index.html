@@ -10,15 +10,45 @@
 
 <style>
 
-/* BASE */
+/* =========================
+   BASE
+========================= */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   color:#1f2d3d;
-  background:#ffffff;
+  background:linear-gradient(to bottom,#ffffff,#f7f9fc,#eef2f7);
+  padding-top:60px;
 }
 
-/* HERO */
+/* =========================
+   MENU FIXO
+========================= */
+.menu{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#111;
+  color:#f4c400;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  z-index:999;
+  font-size:14px;
+}
+
+.menu a{
+  color:#fff;
+  margin-left:15px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero{
   background:#f4c400;
   padding:90px 20px;
@@ -28,8 +58,8 @@ body{
   max-width:1100px;
   margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   flex-wrap:wrap;
 }
 
@@ -59,94 +89,93 @@ body{
   font-weight:bold;
 }
 
-/* LOGO */
-.hero-logo{
-  flex:0;
-  min-width:160px;
-  text-align:right;
-}
-
-.hero-logo img{
-  max-width:160px;
+/* FAROL */
+.hero-logo svg{
+  max-width:140px;
   height:auto;
 }
 
-/* SEÇÕES */
+/* =========================
+   SEÇÕES
+========================= */
 section{
-  padding:80px 20px;
+  padding:60px 20px;
   max-width:1100px;
   margin:auto;
 }
 
-/* FUNDO ALTERNADO */
 .alt{
   background:#f7f9fc;
 }
 
-/* TITULOS */
+/* =========================
+   TITULOS
+========================= */
 h2{
   text-align:center;
-  font-size:34px;
+  font-size:32px;
   margin-bottom:10px;
 }
 
-p.subtitle{
+.subtitle{
   text-align:center;
   color:#6b7c93;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 
-/* GRID */
+/* =========================
+   CARDS
+========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  gap:15px;
 }
 
-/* CARD */
 .card{
   background:#fff;
   border-radius:16px;
-  padding:20px;
+  padding:14px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
-  transition:0.2s;
+  border:1px solid rgba(0,0,0,0.04);
+  transition:0.25s;
 }
 
 .card:hover{
   transform:translateY(-4px);
 }
 
-.card h3{
-  margin-top:0;
-  font-size:18px;
-}
-
-/* GRAFICO */
+/* =========================
+   GRAFICO
+========================= */
 .chart-box{
   background:#fff;
-  padding:25px;
+  padding:20px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
 .chart-area{
-  height:360px;
+  height:320px;
 }
 
-/* FONTES */
-.sources{
-  font-size:10px;
-  color:#7a8a9a;
-  margin-top:15px;
-  line-height:1.4;
+/* =========================
+   VIDEOS (CARROSSEL)
+========================= */
+.carousel{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
 }
 
-/* VIDEO */
 .video{
   position:relative;
-  width:100%;
+  min-width:85%;
+  flex:0 0 auto;
+  scroll-snap-align:center;
   padding-top:56.25%;
-  margin-bottom:30px;
 }
 
 .video iframe{
@@ -157,7 +186,9 @@ p.subtitle{
   border-radius:16px;
 }
 
-/* FORM */
+/* =========================
+   FORM
+========================= */
 iframe.form{
   width:100%;
   height:650px;
@@ -165,25 +196,36 @@ iframe.form{
   border-radius:16px;
 }
 
-/* FOOTER */
-footer{
+/* =========================
+   FOOTER
+========================= */
+.footer-dark{
+  background:#111;
+  color:#f4c400;
   text-align:center;
   padding:30px 15px;
   font-size:12px;
-  color:#6b7c93;
-  background:#f7f9fc;
-  border-top:1px solid #e5e9f0;
-  line-height:1.6;
+  margin-top:40px;
 }
 
-footer .title{
-  font-weight:bold;
-  color:#1f2d3d;
-  margin-bottom:6px;
+/* =========================
+   ANIMAÇÃO
+========================= */
+.hidden{
+  opacity:0;
+  transform:translateY(18px);
+  transition:all 0.7s ease;
 }
 
-/* MOBILE */
-@media (max-width:768px){
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
 
   .hero h1{
     font-size:34px;
@@ -199,13 +241,6 @@ footer .title{
     margin-top:20px;
   }
 
-  section{
-    padding:50px 15px;
-  }
-
-  .chart-area{
-    height:280px;
-  }
 }
 
 </style>
@@ -213,11 +248,23 @@ footer .title{
 
 <body>
 
+<!-- MENU -->
+<nav class="menu">
+  <div>Maio Amarelo 2026</div>
+  <div>
+    <a href="#conceitos">Conceitos</a>
+    <a href="#dados">Dados</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#formulario">Formulário</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
 
   <div class="hero-content">
 
+    <!-- TEXTO -->
     <div class="hero-text">
       <h1>Maio Amarelo 2026</h1>
       <p>Desacelere. Seu bem maior é a vida.</p>
@@ -225,113 +272,98 @@ footer .title{
       <a href="#formulario" class="btn">Iniciar Treinamento</a>
     </div>
 
+    <!-- FAROL DIREITA -->
     <div class="hero-logo">
-      <img src="https://via.placeholder.com/160x160?text=Maio+Amarelo" alt="Maio Amarelo Logo">
+
+<svg width="140" height="180" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="30" y="5" width="60" height="150" rx="12" fill="#1f2d3d"/>
+
+  <circle cx="60" cy="55" r="10" fill="#444"/>
+
+  <!-- AMARELO ANIMADO -->
+  <circle cx="60" cy="95" r="12" fill="#f4c400">
+    <animate attributeName="opacity"
+      values="1;0.3;1"
+      dur="1.2s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- brilho -->
+  <circle cx="60" cy="95" r="20" fill="#f4c400" opacity="0.15">
+    <animate attributeName="opacity"
+      values="0.15;0.05;0.15"
+      dur="1.2s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="60" cy="135" r="10" fill="#444"/>
+
+</svg>
+
     </div>
 
   </div>
 
 </div>
 
-<!-- SEGURANÇA -->
-<section>
+<!-- CONCEITOS -->
+<section id="conceitos">
 
 <h2>Segurança nas Estradas</h2>
-<p class="subtitle">Principais fatores de risco no trânsito brasileiro</p>
+<p class="subtitle">Fatores críticos de risco</p>
 
 <div class="grid">
 
-  <div class="card">
-    <h3>🚗 Velocidade</h3>
-    <p>Excesso de velocidade aumenta a gravidade dos acidentes.</p>
-  </div>
-
-  <div class="card">
-    <h3>📱 Distração</h3>
-    <p>Celular ao volante é uma das principais causas de colisões.</p>
-  </div>
-
-  <div class="card">
-    <h3>😴 Fadiga</h3>
-    <p>Cansaço reduz reflexos e aumenta risco de acidentes.</p>
-  </div>
+  <div class="card">🚗 Velocidade</div>
+  <div class="card">📱 Distração</div>
+  <div class="card">😴 Fadiga</div>
 
 </div>
 
 </section>
 
 <!-- DADOS -->
-<section class="alt">
+<section id="dados" class="alt">
 
 <h2>📊 Dados 2024 x 2025</h2>
-<p class="subtitle">Rodovias federais brasileiras</p>
 
 <div class="grid">
 
-  <div class="card">
-    <h3>Acidentes</h3>
-    <p><b>2024:</b> 73.135</p>
-    <p><b>2025:</b> 72.476</p>
-  </div>
-
-  <div class="card">
-    <h3>Mortes</h3>
-    <p><b>2024:</b> 6.151</p>
-    <p><b>2025:</b> 6.040</p>
-  </div>
-
-  <div class="card">
-    <h3>Feridos</h3>
-    <p>83.490 (2025)</p>
-  </div>
-
-  <div class="card">
-    <h3>Custo social</h3>
-    <p>R$ 16 bilhões</p>
-  </div>
+  <div class="card"><b>Acidentes:</b> 73.135 → 72.476</div>
+  <div class="card"><b>Mortes:</b> 6.151 → 6.040</div>
+  <div class="card"><b>Feridos:</b> 83.490</div>
+  <div class="card"><b>Custo:</b> R$ 16 bi</div>
 
 </div>
 
-</section>
-
-<!-- GRAFICO -->
-<section>
-
-<h2>📈 Comparativo</h2>
-
 <div class="chart-box">
-
   <div class="chart-area">
     <canvas id="grafico"></canvas>
   </div>
-
-  <div class="sources">
-    <b>Fontes:</b><br>
-    2. CNT – Acidentes em rodovias federais...<br>
-    3. Pesquisa CNT de Acidentes Rodoviários 2025<br>
-    4. PRF – Veículos de carga e mortalidade
-  </div>
-
 </div>
 
 </section>
 
 <!-- VIDEOS -->
-<section class="alt">
+<section id="videos">
 
 <h2>📹 Treinamento</h2>
-<p class="subtitle">Conteúdo educativo</p>
 
-<div class="video">
-  <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"></iframe>
-</div>
+<div class="carousel">
 
-<div class="video">
-  <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
-</div>
+  <div class="video">
+    <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"></iframe>
+  </div>
 
-<div class="video">
-  <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
+  <div class="video">
+    <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
+  </div>
+
+  <div class="video">
+    <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
+  </div>
+
 </div>
 
 </section>
@@ -348,14 +380,8 @@ src="https://forms.office.com/r/insnuxmpRK?embed=true">
 </section>
 
 <!-- FOOTER -->
-<footer>
-
-<div class="title">
-  Maio Amarelo 2026
-</div>
-
+<footer class="footer-dark">
 Created by Rodolpho Torres - Risk Management Professional © 2026
-
 </footer>
 
 <!-- CHART -->
@@ -363,26 +389,30 @@ Created by Rodolpho Torres - Risk Management Professional © 2026
 const ctx = document.getElementById('grafico');
 
 new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Acidentes', 'Mortes'],
-    datasets: [
-      {
-        label: '2024',
-        data: [73135, 6151],
-        backgroundColor: 'rgba(120,120,120,0.6)'
-      },
-      {
-        label: '2025',
-        data: [72476, 6040],
-        backgroundColor: '#f4c400'
-      }
+  type:'bar',
+  data:{
+    labels:['Acidentes','Mortes'],
+    datasets:[
+      {label:'2024',data:[73135,6151],backgroundColor:'gray'},
+      {label:'2025',data:[72476,6040],backgroundColor:'#f4c400'}
     ]
-  },
-  options: {
-    responsive:true,
-    maintainAspectRatio:false
   }
+});
+</script>
+
+<!-- ANIMAÇÃO -->
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('section,.card').forEach(el=>{
+  el.classList.add('hidden');
+  observer.observe(el);
 });
 </script>
 
