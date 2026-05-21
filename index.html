@@ -10,131 +10,202 @@
 
 <style>
 
+/* BASE */
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#fff8d6;
-    color:#222;
+  margin:0;
+  font-family:Arial, sans-serif;
+  color:#1f2d3d;
+  background:#ffffff;
 }
 
-/* HEADER */
-header{
-    background:#f4c400;
-    padding:60px 20px 30px;
-    text-align:center;
+/* HERO */
+.hero{
+  background:#f4c400;
+  padding:90px 20px;
 }
 
-header h1{
-    font-size:46px;
-    margin-bottom:10px;
+.hero-content{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
 
-header p{
-    font-size:20px;
+.hero-text{
+  flex:1;
+  min-width:250px;
 }
 
-/* BOTAO */
-.botao{
-    display:inline-block;
-    margin-top:20px;
-    background:#000;
-    color:#f4c400;
-    padding:14px 26px;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+.hero h1{
+  font-size:52px;
+  margin:0;
+}
+
+.hero p{
+  font-size:20px;
+  margin-top:10px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 28px;
+  background:#000;
+  color:#f4c400;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+/* LOGO */
+.hero-logo{
+  flex:0;
+  min-width:160px;
+  text-align:right;
+}
+
+.hero-logo img{
+  max-width:160px;
+  height:auto;
 }
 
 /* SEÇÕES */
 section{
-    padding:50px 20px;
-    max-width:1100px;
-    margin:auto;
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+/* FUNDO ALTERNADO */
+.alt{
+  background:#f7f9fc;
 }
 
+/* TITULOS */
+h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+p.subtitle{
+  text-align:center;
+  color:#6b7c93;
+  margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+/* CARD */
 .card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card h3{
+  margin-top:0;
+  font-size:18px;
 }
 
 /* GRAFICO */
 .chart-box{
-    background:#fff;
-    margin-top:30px;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    display:flex;
-    flex-direction:column;
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
 .chart-area{
-    height:320px;
+  height:360px;
 }
 
 /* FONTES */
 .sources{
-    font-size:10px;
-    color:#7a8a9a;
-    margin-top:12px;
-    line-height:1.4;
+  font-size:10px;
+  color:#7a8a9a;
+  margin-top:15px;
+  line-height:1.4;
 }
 
-/* VÍDEOS */
+/* VIDEO */
 .video{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-    margin-bottom:30px;
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  margin-bottom:30px;
 }
 
 .video iframe{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border:none;
-    border-radius:15px;
+  position:absolute;
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:16px;
 }
 
-/* PROGRESSO */
-.progress-container{
-    position:sticky;
-    top:0;
-    background:#fff8d6;
-    padding:10px 0;
-    z-index:10;
+/* FORM */
+iframe.form{
+  width:100%;
+  height:650px;
+  border:none;
+  border-radius:16px;
 }
 
-.progress-bar-bg{
-    height:8px;
-    background:#ddd;
-    border-radius:10px;
-    overflow:hidden;
-    max-width:900px;
-    margin:auto;
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 15px;
+  font-size:12px;
+  color:#6b7c93;
+  background:#f7f9fc;
+  border-top:1px solid #e5e9f0;
+  line-height:1.6;
 }
 
-#progressBar{
-    height:8px;
-    width:0%;
-    background:#f4c400;
+footer .title{
+  font-weight:bold;
+  color:#1f2d3d;
+  margin-bottom:6px;
 }
 
 /* MOBILE */
 @media (max-width:768px){
-    header h1{ font-size:30px; }
-    .chart-area{ height:260px; }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-logo{
+    text-align:center;
+    margin-top:20px;
+  }
+
+  section{
+    padding:50px 15px;
+  }
+
+  .chart-area{
+    height:280px;
+  }
 }
 
 </style>
@@ -142,119 +213,125 @@ section{
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <h1>Maio Amarelo 2026</h1>
-    <p>Desacelere. Seu bem maior é a vida.</p>
-</header>
+<!-- HERO -->
+<div class="hero">
 
-<!-- BOTÃO (AGORA NO LUGAR CERTO) -->
-<section style="text-align:center; padding-top:20px;">
-    <a href="#formulario" class="botao">Iniciar Treinamento</a>
-</section>
+  <div class="hero-content">
 
-<!-- PAINEL -->
-<section>
+    <div class="hero-text">
+      <h1>Maio Amarelo 2026</h1>
+      <p>Desacelere. Seu bem maior é a vida.</p>
 
-<h2 style="text-align:center;">📊 Painel de Segurança Viária — Brasil (2024 x 2025)</h2>
-<p style="text-align:center;color:#666;">
-Rodovias federais — análise de acidentes, vítimas e transporte de cargas
-</p>
-
-<div class="cards">
-
-    <div class="card">
-        <h3>🚧 Acidentes totais</h3>
-        <p>2024: 73.135</p>
-        <p>2025: 72.476</p>
+      <a href="#formulario" class="btn">Iniciar Treinamento</a>
     </div>
 
-    <div class="card">
-        <h3>💀 Mortes</h3>
-        <p>2024: 6.151</p>
-        <p>2025: 6.040</p>
+    <div class="hero-logo">
+      <img src="https://via.placeholder.com/160x160?text=Maio+Amarelo" alt="Maio Amarelo Logo">
     </div>
 
-    <div class="card">
-        <h3>🧍 Feridos</h3>
-        <p>2025: 83.490</p>
-    </div>
-
-    <div class="card">
-        <h3>💰 Custo social</h3>
-        <p>R$ 16 bilhões</p>
-    </div>
+  </div>
 
 </div>
-
-<!-- GRAFICO -->
-<div class="chart-box">
-
-    <div class="chart-area">
-        <canvas id="graficoComparativo"></canvas>
-    </div>
-
-    <div class="sources">
-        <b>Fontes:</b><br>
-        2. CNT – Acidentes em rodovias federais...<br>
-        https://cnt.org.br/agencia-cnt/acidentes-em-rodovias-federais-geram-custo-de-r-168-bilhes-e-expemdesafios-de-comportamento-e-infraestrutura<br><br>
-
-        3. Pesquisa CNT de Acidentes Rodoviários 2025<br><br>
-
-        4. PRF – Quase 44% das mortes nas estradas envolvem veículos de carga
-    </div>
-
-</div>
-
-</section>
-
-<!-- VÍDEOS + PROGRESSO -->
-<section>
-
-<div class="progress-container">
-    <div class="progress-bar-bg">
-        <div id="progressBar"></div>
-    </div>
-</div>
-
-<h2>📹 Treinamento</h2>
-
-<div class="video">
-<iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"></iframe>
-</div>
-
-<div class="video">
-<iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
-</div>
-
-<div class="video">
-<iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
-</div>
-
-</section>
 
 <!-- SEGURANÇA -->
 <section>
 
-<h2>🚦 Segurança nas Estradas</h2>
+<h2>Segurança nas Estradas</h2>
+<p class="subtitle">Principais fatores de risco no trânsito brasileiro</p>
 
-<div class="cards">
+<div class="grid">
 
-<div class="card">
-<h3>Velocidade</h3>
-<p>Respeite os limites.</p>
+  <div class="card">
+    <h3>🚗 Velocidade</h3>
+    <p>Excesso de velocidade aumenta a gravidade dos acidentes.</p>
+  </div>
+
+  <div class="card">
+    <h3>📱 Distração</h3>
+    <p>Celular ao volante é uma das principais causas de colisões.</p>
+  </div>
+
+  <div class="card">
+    <h3>😴 Fadiga</h3>
+    <p>Cansaço reduz reflexos e aumenta risco de acidentes.</p>
+  </div>
+
 </div>
 
-<div class="card">
-<h3>Celular</h3>
-<p>Evite distrações ao volante.</p>
+</section>
+
+<!-- DADOS -->
+<section class="alt">
+
+<h2>📊 Dados 2024 x 2025</h2>
+<p class="subtitle">Rodovias federais brasileiras</p>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>Acidentes</h3>
+    <p><b>2024:</b> 73.135</p>
+    <p><b>2025:</b> 72.476</p>
+  </div>
+
+  <div class="card">
+    <h3>Mortes</h3>
+    <p><b>2024:</b> 6.151</p>
+    <p><b>2025:</b> 6.040</p>
+  </div>
+
+  <div class="card">
+    <h3>Feridos</h3>
+    <p>83.490 (2025)</p>
+  </div>
+
+  <div class="card">
+    <h3>Custo social</h3>
+    <p>R$ 16 bilhões</p>
+  </div>
+
 </div>
 
-<div class="card">
-<h3>Fadiga</h3>
-<p>Descanso salva vidas.</p>
+</section>
+
+<!-- GRAFICO -->
+<section>
+
+<h2>📈 Comparativo</h2>
+
+<div class="chart-box">
+
+  <div class="chart-area">
+    <canvas id="grafico"></canvas>
+  </div>
+
+  <div class="sources">
+    <b>Fontes:</b><br>
+    2. CNT – Acidentes em rodovias federais...<br>
+    3. Pesquisa CNT de Acidentes Rodoviários 2025<br>
+    4. PRF – Veículos de carga e mortalidade
+  </div>
+
 </div>
 
+</section>
+
+<!-- VIDEOS -->
+<section class="alt">
+
+<h2>📹 Treinamento</h2>
+<p class="subtitle">Conteúdo educativo</p>
+
+<div class="video">
+  <iframe src="https://drive.google.com/file/d/1QUrgb47pXXAB2PkGKyAqbbKescKsuo9X/preview"></iframe>
+</div>
+
+<div class="video">
+  <iframe src="https://drive.google.com/file/d/1YeaBfDFzia2-lC-R9HxOhF4TiFocrJxT/preview"></iframe>
+</div>
+
+<div class="video">
+  <iframe src="https://drive.google.com/file/d/1qdZ0vMSe-eZ1v1aMzchyPSzachTuYgRP/preview"></iframe>
 </div>
 
 </section>
@@ -264,47 +341,48 @@ Rodovias federais — análise de acidentes, vítimas e transporte de cargas
 
 <h2>📋 Registro de Participação</h2>
 
-<iframe 
-width="100%" 
-height="650px" 
-src="https://forms.office.com/r/insnuxmpRK?embed=true"
-style="border:none;border-radius:15px;">
+<iframe class="form"
+src="https://forms.office.com/r/insnuxmpRK?embed=true">
 </iframe>
 
 </section>
 
 <!-- FOOTER -->
-<footer style="background:#000;color:#f4c400;text-align:center;padding:30px;">
-Gerente de Contas BRK / Rodolpho Torres / 2026
+<footer>
+
+<div class="title">
+  Maio Amarelo 2026
+</div>
+
+Created by Rodolpho Torres - Risk Management Professional © 2026
+
 </footer>
 
-<!-- SCRIPT GRAFICO -->
+<!-- CHART -->
 <script>
-const ctx = document.getElementById('graficoComparativo');
+const ctx = document.getElementById('grafico');
 
 new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ['Acidentes', 'Mortes'],
     datasets: [
-      { label: '2024', data: [73135, 6151], backgroundColor:'gray' },
-      { label: '2025', data: [72476, 6040], backgroundColor:'#f4c400' }
+      {
+        label: '2024',
+        data: [73135, 6151],
+        backgroundColor: 'rgba(120,120,120,0.6)'
+      },
+      {
+        label: '2025',
+        data: [72476, 6040],
+        backgroundColor: '#f4c400'
+      }
     ]
   },
   options: {
     responsive:true,
     maintainAspectRatio:false
   }
-});
-</script>
-
-<!-- PROGRESS BAR -->
-<script>
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / docHeight) * 100;
-  document.getElementById("progressBar").style.width = progress + "%";
 });
 </script>
 
