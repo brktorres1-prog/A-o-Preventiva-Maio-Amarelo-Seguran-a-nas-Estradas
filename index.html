@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Maio Amarelo 2026</title>
+<title>Maio Amarelo 2026 - Treinamento</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -18,7 +18,7 @@ body{
   font-family:Arial, sans-serif;
   color:#1f2d3d;
   background:linear-gradient(to bottom,#ffffff,#f7f9fc,#eef2f7);
-  padding-bottom:50px; /* evita rodapé cobrir conteúdo */
+  padding-bottom:60px;
 }
 
 html{
@@ -122,7 +122,7 @@ section{
 .card{
   background:#fff;
   border-radius:16px;
-  padding:16px;
+  padding:18px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
@@ -261,11 +261,10 @@ iframe.form{
 
     <div>
       <h1>Maio Amarelo 2026</h1>
-      <p>Desacelere. Seu bem maior é a vida.</p>
-      <a class="btn" href="#conceitos">Iniciar</a>
+      <p>Maio Amarelo | Segurança nas Estradas</p>
+      <a class="btn" href="#conceitos">Iniciar Treinamento</a>
     </div>
 
-    <!-- FAROL -->
     <div class="hero-logo">
 <svg width="140" height="180" viewBox="0 0 120 160">
   <rect x="30" y="5" width="60" height="150" rx="12" fill="#1f2d3d"/>
@@ -282,12 +281,45 @@ iframe.form{
 
 <!-- CONCEITOS -->
 <section id="conceitos">
+
 <h2>Segurança nas Estradas</h2>
 
+<p style="text-align:center; max-width:900px; margin:auto; color:#555;">
+Este módulo apresenta os principais fatores de risco no trânsito e orientações essenciais para a prevenção de acidentes em rodovias.
+</p>
+
 <div class="grid">
-  <div class="card">🚗 <b>Velocidade</b><p>Excesso de velocidade reduz reação.</p></div>
-  <div class="card">📱 <b>Distração</b><p>Celular ao volante é risco grave.</p></div>
-  <div class="card">😴 <b>Fadiga</b><p>Cansaço aumenta acidentes.</p></div>
+
+  <div class="card">
+    <b>🚗 Velocidade</b>
+    <div style="font-size:13px; color:#555; line-height:1.6; margin-top:8px;">
+      O excesso de velocidade reduz o tempo de reação do motorista e aumenta drasticamente a gravidade dos acidentes.
+      Em rodovias, pequenas variações de velocidade podem resultar em colisões fatais.
+      <br><br>
+      <b>Prevenção:</b> respeite os limites e adapte sua condução às condições da via, clima e tráfego.
+    </div>
+  </div>
+
+  <div class="card">
+    <b>📱 Distração</b>
+    <div style="font-size:13px; color:#555; line-height:1.6; margin-top:8px;">
+      O uso do celular ao volante compromete totalmente a atenção e aumenta significativamente o risco de acidentes graves.
+      Em poucos segundos de distração, o veículo percorre grandes distâncias sem controle.
+      <br><br>
+      <b>Prevenção:</b> mantenha foco total na direção e evite qualquer uso de dispositivos móveis.
+    </div>
+  </div>
+
+  <div class="card">
+    <b>😴 Fadiga</b>
+    <div style="font-size:13px; color:#555; line-height:1.6; margin-top:8px;">
+      A fadiga reduz reflexos, atenção e capacidade de decisão, sendo um dos principais fatores de acidentes em viagens longas.
+      Muitas ocorrências acontecem quando o motorista ignora sinais de cansaço.
+      <br><br>
+      <b>Prevenção:</b> respeite períodos de descanso e realize pausas regulares durante a viagem.
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -297,10 +329,27 @@ iframe.form{
 <h2>📊 Dados 2024 x 2025</h2>
 
 <div class="grid">
-  <div class="card"><b>Acidentes</b><p>72.476</p></div>
-  <div class="card"><b>Feridos</b><p>83.490</p></div>
-  <div class="card"><b>Mortes</b><p>6.040</p></div>
-  <div class="card"><b>Custo</b><p>R$ 16 bi</p></div>
+
+  <div class="card">
+    <b>🚗 Acidentes</b>
+    <p>72.476</p>
+  </div>
+
+  <div class="card">
+    <b>🧍 Feridos</b>
+    <p>83.490</p>
+  </div>
+
+  <div class="card">
+    <b>⚰️ Mortes</b>
+    <p>6.040</p>
+  </div>
+
+  <div class="card">
+    <b>💰 Custo</b>
+    <p>R$ 16 bi</p>
+  </div>
+
 </div>
 
 <div class="chart-box">
@@ -308,11 +357,8 @@ iframe.form{
     <canvas id="grafico"></canvas>
   </div>
 
-  <div style="margin-top:10px; font-size:11px; color:#666; font-style:italic;">
-    <b>Fontes:</b><br>
-    CNT – acidentes e custos rodoviários<br>
-    Pesquisa CNT de Acidentes Rodoviários 2025<br>
-    PRF / Agência Brasil – veículos de carga
+  <div style="margin-top:10px; font-size:11px; color:#666;">
+    <b>Fontes:</b> CNT, PRF e Agência Brasil
   </div>
 </div>
 
@@ -323,19 +369,24 @@ iframe.form{
 
 <h2>🛣️ Orientação — Segurança nas Estradas</h2>
 
-<div class="card" style="text-align:justify; font-size:14px; line-height:1.6;">
+<div class="card" style="text-align:justify; font-size:14px; line-height:1.7;">
 
-A segurança no trânsito depende diretamente da consciência individual de cada motorista. 
-A maioria dos acidentes pode ser evitada com atitudes simples como respeito aos limites de velocidade, atenção total e direção defensiva.
+A segurança no trânsito depende diretamente do comportamento do condutor. Cada decisão ao volante impacta diretamente a preservação de vidas.
 
-Em rodovias, pequenos erros podem gerar grandes consequências.
+Respeitar regras, manter atenção e evitar riscos são atitudes fundamentais para reduzir acidentes nas rodovias.
 
-Em veículos de carga, o risco é ainda maior, exigindo responsabilidade redobrada.
+Grande parte dos sinistros está relacionada a falhas humanas, como excesso de velocidade, distração e fadiga.
+
+Em operações rodoviárias e transporte de cargas, a responsabilidade é ainda maior devido ao nível de exposição ao risco.
 
 <br><br>
 
-<b style="font-size:15px; color:#111;">
-Assista aos vídeos. Sua vida é importante. Uma decisão errada pode não ter segunda chance.
+<b>A direção segura é uma responsabilidade contínua, não uma opção.</b>
+
+<br><br>
+
+<b style="color:#b00020;">
+Assista aos vídeos com atenção. Uma decisão responsável pode salvar vidas.
 </b>
 
 </div>
@@ -364,12 +415,22 @@ Assista aos vídeos. Sua vida é importante. Uma decisão errada pode não ter s
 <!-- FORM -->
 <section id="formulario">
 
-<h2>📋 Formulário</h2>
+<h2>📋 Formulário de Treinamento</h2>
 
-<p style="text-align:center; max-width:800px; margin:0 auto 15px auto; color:#555; font-size:14px;">
-Sua participação é essencial para a segurança no trânsito. Responda com atenção — cada contribuição ajuda a salvar vidas nas estradas.
+<p style="text-align:center; max-width:900px; margin:auto; color:#555; line-height:1.6;">
+Este formulário integra o programa de treinamento em segurança viária do Maio Amarelo.
+
+O objetivo é reforçar a conscientização dos condutores sobre riscos nas rodovias e práticas de direção defensiva.
+
 <br><br>
-<b style="color:#111;">Dirigir com responsabilidade é um compromisso com a vida.</b>
+
+<b>Atenção: responder com responsabilidade faz parte do compromisso com a segurança no trânsito.</b>
+
+<br><br>
+
+<b style="color:#b00020;">
+Dirigir com consciência é preservar vidas.
+</b>
 </p>
 
 <iframe class="form"
@@ -377,7 +438,7 @@ src="https://forms.office.com/r/insnuxmpRK?embed=true"></iframe>
 
 </section>
 
-<!-- FOOTER FIXO -->
+<!-- FOOTER -->
 <footer class="footer-dark">
 Created by Rodolpho Torres - Risk Management Professional © 2026
 </footer>
@@ -394,7 +455,27 @@ window.addEventListener("load", () => {
         {label:'2024',data:[73135,6151]},
         {label:'2025',data:[72476,6040]}
       ]
-    }
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{position:'top'}}
+    },
+    plugins:[{
+      id:'valores',
+      afterDatasetsDraw(chart){
+        const {ctx} = chart;
+        chart.data.datasets.forEach((dataset,i)=>{
+          const meta = chart.getDatasetMeta(i);
+          meta.data.forEach((bar,index)=>{
+            const value = dataset.data[index];
+            ctx.fillStyle = '#1f2d3d';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(value, bar.x, bar.y - 6);
+          });
+        });
+      }
+    }]
   });
 });
 </script>
